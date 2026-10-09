@@ -75,6 +75,5 @@ The SQL file defines these main tables:
 - Replace the demo payment workflow with a secure payment provider only if developing a properly secured production system.
 
 ## Author
-
 Effat Ara Sworna  
-CSE Undergraduate Student
+
