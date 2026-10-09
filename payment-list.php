@@ -1,0 +1,5 @@
+<?php require "db.php"; $rows=$conn->query("SELECT payment_id, booking_id, payment_date, amount, method, created_at FROM payments ORDER BY payment_id DESC"); ?>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Payment List</title><link rel="stylesheet" href="style.css"></head><body><?php require "header.php"; ?><main class="container">
+<div class="page-head"><div class="eyebrow">Database Records</div><h1>Payment List</h1><p>These records are read directly from the FLY Air MySQL database in XAMPP.</p></div>
+<div class="panel panel-dark"><div class="table-wrap"><table class="table"><tr><th>Payment Id</th><th>Booking Id</th><th>Payment Date</th><th>Amount</th><th>Method</th><th>Created At</th></tr><?php while($r=$rows->fetch_assoc()): ?><tr><td><?=e($r['payment_id'])?></td><td><?=e($r['booking_id'])?></td><td><?=e($r['payment_date'])?></td><td><?=e($r['amount'])?></td><td><?=e($r['method'])?></td><td><?=e($r['created_at'])?></td></tr><?php endwhile;?></table></div></div>
+</main><?php require "footer.php"; ?></body></html>
